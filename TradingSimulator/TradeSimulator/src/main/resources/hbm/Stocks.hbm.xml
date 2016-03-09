@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="com.igate.tradingsimulator.domain.Stocks" table="STOCKS">
+      <meta attribute="class-description">This class contains the user details about stocks.</meta>
+      <id name="stockId" type="string" column="STOCKID">
+      	<generator class="native" />
+      </id>
+      <property name="stockDesc" column="STOCKDESC" type="string"/>
+      <property name="marketValue" column="MKTVAL" type="float"/>
+   </class>
+</hibernate-mapping>

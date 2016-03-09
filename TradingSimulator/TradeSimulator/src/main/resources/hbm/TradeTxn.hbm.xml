@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.igate.tradingsimulator.domain.TradeTxn" table="TRADETXN">
+		<meta attribute="class-description">This class contains the all trade transactions.</meta>
+		<id name="id" type="int" column="TRADEID">
+			<generator class="increment" />
+		</id>
+		<property name="action" column="BSACTION" type="string" />
+		<property name="stock" column="STOCK" type="string" />
+		<property name="product" column="PRODUCT" type="string" />
+		<property name="exchange" column="EXCHANGE" type="string" />
+		<property name="quantity" column="QUANTITY" type="integer" />
+		<property name="orderType" column="ORDERTYPE" type="string" />
+		<property name="limitPrice" column="LIMITPRICE" type="float" />
+		<property name="viewLimit" column="VIEWLIMIT" type="float" />
+		<property name="orderValidity" column="ORDERVALIDITY" type="string" />
+		<property name="stopLossTriggerPrice" column="STOPLOSSTRIGGERPRICE" type="float" />
+		<property name="creationDate" column="CREATEDON" type="timestamp" />
+		<property name="executionDate" column="EXECUTEDON" type="timestamp" />
+		<property name="executionStatus" column="EXECUTIONSTATUS" type="string" />
+		
+		<many-to-one name="user" class="com.igate.tradingsimulator.domain.User"
+            column="username" not-null="true" cascade="all" />
+	</class>
+</hibernate-mapping>

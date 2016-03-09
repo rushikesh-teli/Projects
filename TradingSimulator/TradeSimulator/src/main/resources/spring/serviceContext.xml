@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="userService" class="com.igate.tradingsimulator.service.impl.UserServiceImpl">
+		<property name="userDAO" ref="userDAO"/>
+		<property name="messageSource" ref="messageSource"/>
+	</bean>
+	
+	<bean id="stocksService" class="com.igate.tradingsimulator.service.impl.StocksServiceImpl">
+		<property name="stocksDAO" ref="stocksDAO"/>
+		<property name="messageSource" ref="messageSource"/>
+	</bean>
+
+	<bean id="tradeService" class="com.igate.tradingsimulator.service.impl.TradeServiceImpl">
+		<property name="tradeDAO" ref="tradeDAO"/>
+		<property name="userDAO" ref="userDAO"/>
+		<property name="messageSource" ref="messageSource"/>
+	</bean>	
+	
+</beans>
